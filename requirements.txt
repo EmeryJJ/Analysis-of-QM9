@@ -1,0 +1,19 @@
+# Analysis-of-QM9 Dependencies
+# Install with: pip install -r requirements.txt
+
+torch==2.10.0
+torch-geometric==2.7.0
+rdkit==2025.3.6
+
+# Visualization & Data Processing
+matplotlib==3.10.8
+seaborn==0.13.2
+networkx==3.6.1
+py3Dmol==2.5.4
+pandas==3.0.1
+numpy==2.4.3
+
+# Optional: Jupyter notebook support
+jupyter-client==8.8.0
+ipykernel==7.2.0
+IPython==9.11.0

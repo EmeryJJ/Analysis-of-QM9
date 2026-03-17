@@ -32,10 +32,54 @@ Key goals:
 
 ## Installation & Setup
 
-Clone the repository:
+To reproduce this analysis on a fresh clone:
 
+### 1. Create and activate a virtual environment
 ```bash
-git clone https://github.com/EmeryJJ/Analysis-of-QM9.git
-cd Analysis-of-QM9
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
-Then simply run the code within the ipynb file. 
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the notebook
+```bash
+jupyter notebook QM9_Analysis.ipynb
+```
+
+Or if using VS Code:
+- Open `QM9_Analysis.ipynb` in VS Code
+- Select the Python interpreter from `.venv/bin/python`
+- Run all cells
+
+## What the Notebook Does
+
+1. **Cell 1**: Loads the QM9 dataset (~130K molecules) via `load_qm9.py`
+2. **Cell 2**: Computes basic statistics (atom counts, property distributions)
+3. **Cell 3**: Creates distribution plots for atomic and quantum properties
+4. **Cell 4**: Provides molecule visualization functions (2D, 3D, graph)
+5. **Cell 5**: Shows data quality checks and bias considerations
+
+## File Structure
+
+```
+.
+├── QM9_Analysis.ipynb          # Main notebook
+├── load_qm9.py                 # Simple dataset loader
+├── requirements.txt            # Python dependencies
+└── qm9_data/                   # Dataset directory (created on first run)
+    ├── raw/                    # SDF files
+    └── processed/              # Cached processed graphs
+```
+
+## Troubleshooting
+
+If you encounter import errors, ensure:
+1. The virtual environment is activated
+2. All packages in `requirements.txt` are installed
+3. You're running Python 3.10+
+
+The dataset will be automatically downloaded on first run (~300MB).
